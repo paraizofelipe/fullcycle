@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	clientpkg "github.com/paraizofelipe/fullcycle-client-server/internal/client"
+	clientpkg "github.com/paraizofelipe/fullcycle/client-server/internal/client"
 )
 
 const (

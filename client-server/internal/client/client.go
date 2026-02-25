@@ -6,7 +6,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/paraizofelipe/fullcycle-client-server/internal/ctxlog"
+	"github.com/paraizofelipe/fullcycle/client-server/internal/ctxlog"
 )
 
 type exchangeRateResponse struct {

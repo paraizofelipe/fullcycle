@@ -2,10 +2,7 @@ module github.com/paraizofelipe/fullcycle/client-server
 
 go 1.25.5
 
-require (
-	github.com/paraizofelipe/fullcycle-client-server v0.0.0-20260201174054-33c2da5189ec
-	modernc.org/sqlite v1.44.3
-)
+require modernc.org/sqlite v1.44.3
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect

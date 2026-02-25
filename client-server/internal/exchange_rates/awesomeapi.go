@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/paraizofelipe/fullcycle-client-server/internal/ctxlog"
+	"github.com/paraizofelipe/fullcycle/client-server/internal/ctxlog"
 )
 
 const DefaultQuoteURL = "https://economia.awesomeapi.com.br/json/last/USD-BRL"

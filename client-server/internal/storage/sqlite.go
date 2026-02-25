@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/paraizofelipe/fullcycle-client-server/internal/ctxlog"
+	"github.com/paraizofelipe/fullcycle/client-server/internal/ctxlog"
 )
 
 type Store struct {

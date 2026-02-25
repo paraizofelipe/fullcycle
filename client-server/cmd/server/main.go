@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/paraizofelipe/fullcycle-client-server/internal/exchange_rates"
-	"github.com/paraizofelipe/fullcycle-client-server/internal/storage"
+	"github.com/paraizofelipe/fullcycle/client-server/internal/exchange_rates"
+	"github.com/paraizofelipe/fullcycle/client-server/internal/storage"
 	_ "modernc.org/sqlite"
 )
 
