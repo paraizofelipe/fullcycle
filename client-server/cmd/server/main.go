@@ -54,7 +54,7 @@ func main() {
 
 func routes(store *storage.Store, httpClient *http.Client) http.Handler {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/exchange_rates", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/cotacao", func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("request received: %s %s", r.Method, r.URL.Path)
 		if r.Method != http.MethodGet {
 			log.Printf("request error: %s %s method not allowed", r.Method, r.URL.Path)

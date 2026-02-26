@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	serverURL     = "http://localhost:8080/exchange_rates"
+	serverURL     = "http://localhost:8080/cotacao"
 	clientTimeout = 300 * time.Millisecond
 )
 
@@ -28,7 +28,7 @@ func main() {
 	log.Printf("exchange rate received: bid=%s", bid)
 
 	content := []byte("Dólar: " + bid)
-	if err := os.WriteFile("exchange_rates.txt", content, 0644); err != nil {
+	if err := os.WriteFile("cotacao.txt", content, 0644); err != nil {
 		log.Fatalf("write file: %v", err)
 	}
 }
