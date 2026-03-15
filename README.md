@@ -64,6 +64,43 @@ Estado: SP
 
 ---
 
+### 3. `stress-test/` — CLI de Teste de Carga
+
+**Objetivo:** Implementar uma CLI em Go que realiza testes de carga em serviços web, distribuindo requisições com concorrência controlada e exibindo um relatório detalhado ao final.
+
+**Como funciona:**
+
+- Recebe `--url`, `--requests` e `--concurrency` via linha de comando (Cobra + Viper)
+- Distribui as requisições entre workers concorrentes usando goroutines e channels
+- Ao final, exibe tempo total, total de requisições, quantidade de HTTP 200 e distribuição dos demais status
+
+**Como executar:**
+```bash
+# Localmente
+cd stress-test && go run . --url=https://httpbin.org/get --requests=100 --concurrency=10
+
+# Via Docker
+docker build -t stress-test ./stress-test
+docker run stress-test --url=https://httpbin.org/get --requests=1000 --concurrency=10
+```
+
+**Exemplo de saída:**
+```
+Iniciando stress test...
+  URL:         https://httpbin.org/get
+  Requisições: 1000
+  Concorrência: 10
+
+Progresso: 1000/1000
+========== Relatório ==========
+Tempo total:            4.321s
+Total de requisições:   1000
+Respostas HTTP 200:     1000
+================================
+```
+
+---
+
 ## Estrutura do Repositório
 
 ```
@@ -77,8 +114,13 @@ fullcycle/
 │       ├── storage/        # Persistência no SQLite
 │       ├── client/         # HTTP client para consumir o servidor
 │       └── ctxlog/         # Helper para log de erros de contexto
-└── multithreading/         # Desafio 2 — corrida entre BrasilAPI e ViaCEP
-    └── main.go
+├── multithreading/         # Desafio 2 — corrida entre BrasilAPI e ViaCEP
+│   └── main.go
+└── stress-test/            # Desafio 3 — CLI de teste de carga com Docker
+    ├── cmd/                # Flags e comando raiz (Cobra + Viper)
+    ├── internal/loadtest/  # Worker pool, coleta de resultados e relatório
+    ├── main.go
+    └── Dockerfile
 ```
 
 ## Requisitos
